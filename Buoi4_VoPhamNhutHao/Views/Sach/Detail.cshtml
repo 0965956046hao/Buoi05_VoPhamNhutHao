@@ -1,0 +1,43 @@
+﻿@model Buoi4_VoPhamNhutHao.Models.Sach
+
+@{
+    ViewBag.Title = "Detail";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Chi Tiết Sách</h2>
+
+<div>
+    <hr />
+    <dl class="dl-horizontal">
+        
+        <dd>
+            <strong>Loại Sách: @Html.DisplayFor(model => model.maloai)
+        </dd>
+
+        <dd>
+            <strong>Tên Sách: @Html.DisplayFor(model => model.tensach)
+        </dd>
+
+        <dd>
+            <strong>Hình:  <img src="@Model.hinh" alt="hinh thumbnail" />
+        </dd>
+
+        <dd>
+            <strong>Giá Bán:  @Html.DisplayFor(model => model.giaban)
+        </dd>
+
+        <dd>
+            <strong>Ngày Cập Nhật: @Html.DisplayFor(model => model.ngaycapnhat)
+        </dd>
+
+        <dd>
+            <strong>Số Lượng : @Html.DisplayFor(model => model.soluongton)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.masach }) |
+    @Html.ActionLink("Back to List", "Listsach")
+</p>

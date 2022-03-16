@@ -1,0 +1,49 @@
+﻿@model Buoi4_VoPhamNhutHao.Models.Sach
+
+@{
+    ViewBag.Title = "Delete";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>Sach</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dd>
+            <strong>Loại Sách: @Html.DisplayFor(model => model.maloai)
+        </dd>
+
+        <dd>
+            <strong>Tên Sách: @Html.DisplayFor(model => model.tensach)
+        </dd>
+
+        <dd>
+            <strong>Hình:  <img src="@Model.hinh" alt="hinh thumbnail" />
+        </dd>
+
+        <dd>
+            <strong>Giá Bán:  @Html.DisplayFor(model => model.giaban)
+        </dd>
+
+        <dd>
+            <strong>Ngày Cập Nhật: @Html.DisplayFor(model => model.ngaycapnhat)
+        </dd>
+
+        <dd>
+            <strong>Số Lượng : @Html.DisplayFor(model => model.soluongton)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "Listsach")
+        </div>
+    }
+</div>
